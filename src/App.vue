@@ -1,24 +1,15 @@
-<script setup lang="ts">
-const str = '我爱你祖国'
-for (let i = 0; i < str.length; i++) {
-  console.log(str[i])
-}
-</script>
-
 <template>
-  <div class="box">
-    <h1>我是App</h1>
-    <h1>新增标题</h1>
+  <div>
+    <h1>测试代码</h1>
   </div>
 </template>
 
+<script setup lang="ts"></script>
+
 <style scoped lang="scss">
-.box {
-  width: 600px;
-  height: 400px;
-  background: black;
-}
-h1 {
-  color: white;
+div {
+  h1 {
+    color: $color;
+  }
 }
 </style>

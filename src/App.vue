@@ -1,13 +1,14 @@
 <script setup lang="ts">
-const str = '我爱你祖国';
+const str = '我爱你祖国'
 for (let i = 0; i < str.length; i++) {
-  console.log(str[i]);
+  console.log(str[i])
 }
 </script>
 
 <template>
   <div class="box">
     <h1>我是App</h1>
+    <h1>新增标题</h1>
   </div>
 </template>
 

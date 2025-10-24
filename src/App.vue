@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-const a= "222";
+const message = "Hello, world!";
 </script>
 
 <style scoped></style>

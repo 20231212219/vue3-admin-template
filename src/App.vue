@@ -6,6 +6,5 @@
 
 <script setup lang="ts">
 const message = "Hello, world!";
-</script>
 
-<style scoped></style>
+<style scoped > </style>

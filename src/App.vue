@@ -5,9 +5,7 @@
 </template>
 
 <script setup lang="ts">
-
+const a= "222";
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

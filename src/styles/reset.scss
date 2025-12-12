@@ -1,0 +1,92 @@
+/* ---------------------------------------------------- */
+/* CSS Reset (Eric Meyer's Reset 2.0 简化版)   */
+/* ---------------------------------------------------- */
+
+// 1. 清除所有元素的默认 margin 和 padding
+*,
+*::before,
+*::after {
+    box-sizing: border-box; // 统一所有元素的盒模型
+    margin: 0;
+    padding: 0;
+}
+
+// 2. 移除一些元素的默认样式，并设置为块级元素
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+// 3. 统一 HTML5 元素的块级显示
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+// 4. 设置默认的行高和字体
+body {
+    line-height: 1.5; // 更易读的行高
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    // 可以根据项目需求设置您自己的默认字体
+}
+
+// 5. 移除列表的默认圆点/数字
+ol, ul {
+	list-style: none;
+}
+
+// 6. 统一引用和斜体的样式
+blockquote, q {
+	quotes: none;
+}
+blockquote::before, blockquote::after,
+q::before, q::after {
+	content: '';
+	content: none;
+}
+
+// 7. 确保表格边框合并
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+// 8. 移除链接的默认下划线，让颜色继承父级
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+// 9. 确保图片在容器内缩放
+img {
+    max-width: 100%;
+    display: block; // 移除底部的小白边
+}
+
+// 10. 统一表单元素外观
+button, input, textarea, select {
+    font: inherit; // 继承 body 字体
+    background: none;
+    border: none;
+    outline: none;
+    -webkit-tap-highlight-color: transparent; // 移除移动端点击高亮
+}
+
+// 11. 针对按钮的一些额外处理
+button {
+    cursor: pointer;
+}

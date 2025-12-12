@@ -1,14 +1,16 @@
 import { fileURLToPath, URL } from 'node:url'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import path from 'path'
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import { viteMockServe } from 'vite-plugin-mock'
 
 // https://vite.dev/config/
-export default defineConfig(({ command }) => {
+export default defineConfig(({ command, mode }) => {
+  // 获取各种环境下的环境变量
+  const env = loadEnv(mode, process.cwd())
   return {
     plugins: [
       vue(),
@@ -32,6 +34,19 @@ export default defineConfig(({ command }) => {
       preprocessorOptions: {
         scss: {
           additionalData: `@use "@/styles/variable.scss" as *;`,
+        },
+      },
+    },
+    // 代理跨域
+    server: {
+      proxy: {
+        [env.VITE_APP_BASE_API]: {
+          // 获取服务器地址设置
+          target: env.VITE_SERVE,
+          // 是否需要代理跨域(一般需要)
+          changeOrigin: true,
+          // 路径重写
+          rewrite: (path) => path.replace(/^\/api/, ''),
         },
       },
     },

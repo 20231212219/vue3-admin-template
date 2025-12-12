@@ -1,7 +1,7 @@
 <template>
-    <svg :style="{width,height}">
-      <use :xlink:href="prefix + name" :fill="color" ></use>
-    </svg>
+  <svg :style="{ width, height }">
+    <use :xlink:href="prefix + name" :fill="color"></use>
+  </svg>
 </template>
 
 <script setup lang="ts">
@@ -29,6 +29,4 @@ defineProps({
 })
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

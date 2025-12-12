@@ -5,25 +5,25 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import 'virtual:svg-icons-register'
 import App from './App.vue'
-
+// 引入全局样式
+import '@/styles/index.scss'
+import axios from 'axios'
+// 引入自定义插件对象:注册项目全局组件
+import gloablComponent from './components/index'
+// 引入路由
+import router from './router/index'
+// 引入仓库
+import pinia from './store/index'
+// 引入路由鉴权
+import './permisstion.ts'
 const app = createApp(App)
 app.use(ElementPlus, {
   locale: zhCn,
 })
-app.use(createPinia())
-// 引入自定义插件对象:注册项目全局组件
-import gloablComponent from './components/index'
+app.use(pinia)
+
 app.use(gloablComponent)
-// 引入全局样式
-import '@/styles/index.scss'
-import axios from 'axios'
-console.log('---发送请求---')
-axios({
-  url: '/api/user/login',
-  method: 'post',
-  data: {
-    username: 'admin',
-    password: '111111',
-  },
-})
+
+app.use(router)
+
 app.mount('#app')

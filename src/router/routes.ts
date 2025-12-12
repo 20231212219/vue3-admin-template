@@ -88,6 +88,21 @@ export const constantRoute = [
     ],
   },
   {
+    path: '/theme',
+    component: () => import('@/layout/index.vue'),
+    name: 'Theme',
+    meta: { title: '主题设置', hidden: false, icon: 'Setting' },
+    redirect: '/theme/index',
+    children: [
+      {
+        path: '/theme/index',
+        component: () => import('@/views/theme/index.vue'),
+        name: 'ThemeConfig',
+        meta: { title: '系统配置', hidden: false, icon: 'Tools' },
+      },
+    ],
+  },
+  {
     path: '/404',
     component: () => import('@/views/404/index.vue'),
     name: '404',

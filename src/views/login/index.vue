@@ -133,7 +133,7 @@ const login = async () => {
   width: 100%;
   height: 100vh;
   /* 背景图片，覆盖铺满 */
-  background: url('@/assets/images/background.jpg') no-repeat;
+  background: v-bind('`url(${settingStore.loginBg})`') no-repeat;
   background-size: cover;
   .login_form {
     /* 表单位置与宽度 */

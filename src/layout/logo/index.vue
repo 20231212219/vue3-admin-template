@@ -1,13 +1,13 @@
 <template>
-  <div class="logo" v-if="setting.logoHidden">
-    <img :src="setting.logo" alt="" />
-    <p style="white-space: nowrap">{{ setting.title }}</p>
+  <div class="logo" v-if="settingStore.logoHidden">
+    <img :src="settingStore.logo" alt="" />
+    <p style="white-space: nowrap">{{ settingStore.title }}</p>
   </div>
 </template>
 
 <script setup lang="ts">
-// 引入设置标题和logo
-import setting from '@/setting.ts'
+import useLayOutSettingStore from '@/store/modules/setting'
+const settingStore = useLayOutSettingStore()
 </script>
 <script lang="ts">
 export default {

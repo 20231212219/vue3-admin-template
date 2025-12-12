@@ -4,7 +4,7 @@
       <img :src="userStore.avatar" alt="" class="avatar" />
       <div class="bottom">
         <h3 class="title">{{ getTime() }}好呀{{ userStore.username }}</h3>
-        <p class="subtitle">硅谷甄选运营平台</p>
+        <p class="subtitle">vue后台管理模板</p>
       </div>
     </div>
   </el-card>

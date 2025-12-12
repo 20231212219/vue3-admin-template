@@ -1,6 +1,6 @@
 <template>
   <!-- 登录页面容器，包含左侧空白列与右侧登录表单列 -->
-  <div class="login_container">
+  <div class="login_container" :style="{ backgroundImage: `url(${settingStore.loginBg})` }">
     <el-row>
       <!-- 左侧占位列（大屏幕显示为空），用于页面布局平衡 -->
       <el-col :span="12" :xs="0"></el-col>
@@ -11,7 +11,7 @@
           <!-- 页面主标题 -->
           <h1>Hello</h1>
           <!-- 副标题/欢迎语 -->
-          <h2>欢迎来到硅谷甄选</h2>
+          <h2>欢迎使用后台管理系统</h2>
           <!-- 用户名输入项：使用 Element Plus 输入组件，前缀图标为 User -->
           <el-form-item prop="username">
             <el-input :prefix-icon="User" v-model="loginForm.username"></el-input>
@@ -48,7 +48,8 @@ import { Lock, User } from '@element-plus/icons-vue'
 /* Vue 响应式 API */
 import { reactive, ref } from 'vue'
 /* 引入用户相关的 Pinia 小仓库（处理登录等） */
-import useUserStore from '@/store//modules/user'
+import useUserStore from '@/store/modules/user'
+import useLayOutSettingStore from '@/store/modules/setting'
 /* Vue Router 的组合式钩子，用于路由跳转 */
 import { useRouter, useRoute } from 'vue-router'
 /* Element Plus 的通知组件，用于提示登录结果 */
@@ -73,6 +74,7 @@ const validatorPassword = (rule: any, value: any, callback: any) => {
 const loading = ref(false)
 /* 创建用户仓库实例，后续调用登录方法 */
 const useStore = useUserStore()
+const settingStore = useLayOutSettingStore()
 /* 获取路由实例以便登录后跳转 */
 const $router = useRouter()
 const $route = useRoute()
@@ -97,8 +99,6 @@ const rules = {
 /* 登录方法：调用仓库的异步登录方法，成功则跳转并提示，失败则提示错误 */
 const login = async () => {
   // 保证全部表单校验通过再发请求
-  console.log(loginForms.value.validate())
-
   await loginForms.value.validate()
   // 加载效果
   loading.value = true
@@ -133,12 +133,13 @@ const login = async () => {
   width: 100%;
   height: 100vh;
   /* 背景图片，覆盖铺满 */
-  background: v-bind('`url(${settingStore.loginBg})`') no-repeat;
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   .login_form {
     /* 表单位置与宽度 */
     position: relative;
-    width: 80%;
+    width: 70%;
     top: 30vh;
     /* 表单背景图（局部美化） */
     background: url('@/assets/images/login_form.png') no-repeat;

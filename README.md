@@ -1,73 +1,75 @@
-# my-app
+﻿# Vue3 Admin 后台管理系统
 
-This template should help get you started developing with Vue 3 in Vite.
+## 简介
 
-## Recommended IDE Setup
+Vue3 Admin 是一个基于 Vue3 + Vite + TypeScript + Element Plus + Pinia 的后台管理系统模板。它提供了丰富的功能组件和开箱即用的解决方案，帮助开发者快速搭建企业级后台应用。
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 特性
 
-## Recommended Browser Setup
+- **最新技术栈**：基于 Vue3、Vite、TypeScript、Pinia 等最新技术栈开发。
+- **组件丰富**：集成 Element Plus UI 组件库，并封装了常用的业务组件。
+- **权限管理**：完善的路由权限控制机制（RBAC 模型）。
+- **主题定制**：支持暗黑模式和主题色配置。
+- **数据大屏**：内置数据大屏适配方案。
+- **SVG 图标**：自动导入 SVG 图标，使用方便。
+- **Mock 数据**：内置 Mock.js，脱离后端独立开发。
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## 预览
 
-## Type Support for `.vue` Imports in TS
+*(在此处添加项目截图)*
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## 快速开始
 
-## Customize configuration
+### 环境准备
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- Node.js >= 16.0.0
+- pnpm >= 8.0.0
 
-## Project Setup
+### 安装依赖
 
-```sh
+`ash
 pnpm install
-```
+``n
+### 启动开发服务器
 
-### Compile and Hot-Reload for Development
-
-```sh
+`ash
 pnpm dev
-```
+``n
+### 构建生产环境
 
-### Type-Check, Compile and Minify for Production
-
-```sh
+`ash
 pnpm build
-```
+``n
+### 代码规范检查
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-pnpm test:unit
-```
-
-### Run End-to-End Tests with [Playwright](https://playwright.dev)
-
-```sh
-# Install browsers for the first run
-npx playwright install
-
-# When testing on CI, must build the project first
-pnpm build
-
-# Runs the end-to-end tests
-pnpm test:e2e
-# Runs the tests only on Chromium
-pnpm test:e2e --project=chromium
-# Runs the tests of a specific file
-pnpm test:e2e tests/example.spec.ts
-# Runs the tests in debug mode
-pnpm test:e2e --debug
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
+`ash
 pnpm lint
-```
+``n
+## 目录结构
+
+``n─ public/              # 静态资源
+ src/                 # 源代码
+    api/             # 接口请求
+    assets/          # 静态资源
+    components/      # 公共组件
+    layout/          # 布局组件
+   ├ router/          # 路由配置
+    store/           # 状态管理
+    styles/          # 全局样式
+    utils/           # 工具函数
+    views/           # 页面文件
+    App.vue          # 入口组件
+    main.ts          # 入口文件
+    permission.ts    # 权限控制
+ .env.development     # 开发环境配置
+ .env.production      # 生产环境配置
+ vite.config.ts       # Vite 配置
+ package.json         # 项目配置
+``n
+## 贡献
+
+欢迎提交 Pull Request 或 Issue。
+
+## 许可证
+
+[MIT](LICENSE)
